@@ -1,0 +1,63 @@
+package com.trashcoin.backend.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "pickup_requests")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class PickupRequest {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+    
+    @Column(nullable = false)
+    private String address;
+    
+    @Column(name = "waste_type", nullable = false)
+    private String wasteType;
+    
+    @Column(name = "estimated_weight")
+    private Double estimatedWeight;
+    
+    @Column(name = "preferred_date")
+    private LocalDateTime preferredDate;
+    
+    @Column(nullable = false)
+    private String status = "pending"; // pending, confirmed, completed, cancelled
+    
+    @Column(name = "coins_earned")
+    private Integer coinsEarned;
+    
+    private String notes;
+    
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+    
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
+    
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
+        if (status == null) {
+            status = "pending";
+        }
+    }
+    
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = LocalDateTime.now();
+    }
+}
