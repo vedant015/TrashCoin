@@ -72,20 +72,17 @@ Complete guide to deploy both frontend and backend on Render.com with Render's P
 4. **Add Environment Variables:**
    Click **"Advanced"** → **"Add Environment Variable"**
    
-   Add these **3 variables**:
+   Add **ONE variable**:
    
    ```
    DATABASE_URL
    Value: <paste your Internal Database URL from Step 2>
-   
-   DATABASE_USERNAME
-   Value: (leave empty - included in DATABASE_URL)
-   
-   DATABASE_PASSWORD
-   Value: (leave empty - included in DATABASE_URL)
    ```
    
-   **Important:** Render's PostgreSQL URL already contains username and password, so DATABASE_USERNAME and DATABASE_PASSWORD can be empty OR you can extract them from the URL if needed.
+   **Important:** 
+   - Use the **Internal Database URL** (not External)
+   - The URL format `postgresql://user:pass@host:5432/db` is automatically converted by the app
+   - Username and password are included in the URL, no need for separate variables
 
 5. **Auto-Deploy:** Leave enabled (deploys on every git push)
 
