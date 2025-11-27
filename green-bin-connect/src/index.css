@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Eco-friendly color palette */
+    --background: 0 0% 98%;
+    --foreground: 155 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 155 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 155 30% 15%;
+
+    /* Primary: Fresh eco-green */
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 160 84% 92%;
+    
+    /* Secondary: Ocean blue */
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 199 89% 95%;
+
+    /* Accent: Light green */
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 155 20% 95%;
+    --muted-foreground: 155 10% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 155 20% 88%;
+    --input: 155 20% 88%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(142 71% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(199 89% 48%), hsl(160 84% 39%));
+    --gradient-hero: linear-gradient(135deg, hsl(160 84% 39% / 0.1), hsl(199 89% 48% / 0.05));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(160 84% 39% / 0.08);
+    --shadow-glow: 0 0 30px hsl(160 84% 39% / 0.15);
+  }
+
+  .dark {
+    --background: 155 30% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 155 25% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 155 25% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 160 84% 45%;
+    --primary-foreground: 155 30% 8%;
+    --primary-light: 160 84% 20%;
+
+    --secondary: 199 89% 52%;
+    --secondary-foreground: 155 30% 8%;
+    --secondary-light: 199 89% 18%;
+
+    --accent: 142 71% 50%;
+    --accent-foreground: 155 30% 8%;
+
+    --muted: 155 20% 18%;
+    --muted-foreground: 155 10% 65%;
+
+    --border: 155 20% 22%;
+    --input: 155 20% 22%;
+    --ring: 160 84% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
