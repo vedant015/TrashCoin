@@ -1,7 +1,3 @@
-Here’s a **clean, professional README.md** you can directly use for your **TrashCoin** project.
-(It’s written in proper GitHub README format and is resume + research friendly.)
-
----
 
 # 🪙 TrashCoin – Incentive-Based Smart Waste Management System
 
@@ -165,19 +161,3 @@ TrashCoin can be extended into:
 Undergraduate Student | Web Development | Cloud & Cybersecurity Enthusiast
 
 ---
-
-## 📜 License
-
-This project is developed for **academic and research purposes**.
-All rights reserved by the author.
-
----
-
-If you want next, I can:
-
-* ✨ Make this README **research-paper aligned**
-* 🧪 Add **system architecture & diagrams**
-* 💼 Rewrite it for **resume / internship submissions**
-* 📄 Convert it into a **conference paper template**
-
-Just tell me 👍
