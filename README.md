@@ -80,45 +80,19 @@ These TrashCoins can later be redeemed for:
 
 **Backend**
 
-* PHP
+* Java
+* Spring Boot
+* Spring Data JPA
+* Spring Security (planned)
 
 **Database / Storage**
 
-* XML (current implementation)
+* MySQL
 
 **Design**
 
 * Figma (UI/UX Design)
 
----
-
-## 🏗️ Project Structure
-
-```
-TrashCoin/
-│
-├── index.html
-├── login.html
-├── signup.html
-├── admin.html
-│
-├── css/
-│   └── styles.css
-│
-├── js/
-│   └── script.js
-│
-├── php/
-│   ├── login.php
-│   ├── register.php
-│   └── requestPickup.php
-│
-├── data/
-│   └── users.xml
-│
-└── assets/
-    └── images/
-```
 
 ---
 
